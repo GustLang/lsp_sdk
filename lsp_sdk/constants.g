@@ -52,6 +52,16 @@ HEADER_SEPARATOR: constant[string] = "\r\n\r\n"
 
 DEFAULT_CONTENT_TYPE: constant[string] = "application/vscode-jsonrpc; charset=utf-8"
 
+# ══ Base-protocol methods ═════════════════════════════════════════════
+# The `$/` methods the dispatch loop implements itself rather than routing to a
+# registered handler.
+
+# Notification asking the server to abandon an in-flight request, carrying the
+# request's id in `params.id`.
+
+
+CANCEL_REQUEST_METHOD: constant[string] = "$/cancelRequest"
+
 # ══ Protocol enumerations ═════════════════════════════════════════════
 # (JSON-RPC's `ErrorCodes` enum lives in `message.g`.)
 
