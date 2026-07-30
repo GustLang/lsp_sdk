@@ -11,6 +11,9 @@ stdio. Import it with `use lsp`. The package is organized as:
                        CompletionItem, Hover, ...) that serialize via `__dict`
                        and deserialize via a `dict as Struct` cast
   * `capabilities.g` — the `initialize` handshake and `ServerCapabilities`
+  * `positions.g`    — position-encoding negotiation and the byte ↔ UTF-16
+                       column conversion a byte-indexed server needs at its
+                       protocol boundary
   * `server.g`       — the `Server` dispatch loop and handler registration
   * `json_build.g`   — the shared `put_str` "omit-when-empty" object helper
 
