@@ -1,0 +1,8 @@
+[project]
+name    = "lsp_sdk"
+version = "0.1.0"
+
+[lint]
+ignore = [
+"W0701",
+]
