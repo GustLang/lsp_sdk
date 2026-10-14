@@ -248,7 +248,11 @@ def Server.serve() -> none
             break
         end
         if res.status == ReadStatus.malformed
-            respond_error(none, ErrorCodes.parse_error, "malformed message: " + res.detail)
+            respond_error(
+                none,
+                ErrorCodes.parse_error,
+                "malformed message: " + res.detail,
+            )
             continue
         end
         if _handle_message(res.msg)
@@ -403,7 +407,7 @@ def private Server._response_index(id: Any) -> integer
             return i
         end
     end
-    return - 1
+    return -1
 end
 
 
@@ -446,7 +450,11 @@ def private Server._drain_ready() -> none
             return
         end
         if res.status == ReadStatus.malformed
-            respond_error(none, ErrorCodes.parse_error, "malformed message: " + res.detail)
+            respond_error(
+                none,
+                ErrorCodes.parse_error,
+                "malformed message: " + res.detail,
+            )
             continue
         end
         if message_method(res.msg) == CANCEL_REQUEST_METHOD
@@ -491,7 +499,11 @@ def private Server._coalesce_notification(method: string, msg: Any) -> Any
             return newest
         end
         if res.status == ReadStatus.malformed
-            respond_error(none, ErrorCodes.parse_error, "malformed message: " + res.detail)
+            respond_error(
+                none,
+                ErrorCodes.parse_error,
+                "malformed message: " + res.detail,
+            )
             continue
         end
         if message_method(res.msg) == method and _document_uri(res.msg) == uri

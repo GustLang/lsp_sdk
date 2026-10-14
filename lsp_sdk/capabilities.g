@@ -208,14 +208,14 @@ def initialize_params_from_json(v: Any) -> InitializeParams
     if "processId" in obj
         pid := obj["processId"]
         if pid is integer
-            process_id = pid as integer
+            process_id = pid
         end
     end
     root_uri := ""
     if "rootUri" in obj
         root := obj["rootUri"]
         if root is string
-            root_uri = root as string
+            root_uri = root
         end
     end
     client_name := ""
@@ -225,13 +225,13 @@ def initialize_params_from_json(v: Any) -> InitializeParams
         if "name" in info
             name_v := info["name"]
             if name_v is string
-                client_name = name_v as string
+                client_name = name_v
             end
         end
         if "version" in info
             ver_v := info["version"]
             if ver_v is string
-                client_version = ver_v as string
+                client_version = ver_v
             end
         end
     end

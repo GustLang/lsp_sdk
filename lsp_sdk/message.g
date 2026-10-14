@@ -206,7 +206,7 @@ def message_method(msg: Any) -> string
     if "method" in d
         m := d["method"]
         if m is string
-            return m as string
+            return m
         end
     end
     return ""
